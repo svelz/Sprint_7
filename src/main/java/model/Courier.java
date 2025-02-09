@@ -9,6 +9,8 @@ public class Courier {
     public Courier(String login, String password, String firstName) {
         this.login = login;
         this.password = password;
+        this.firstName = firstName;
+
     }
 
     public String getLogin() {

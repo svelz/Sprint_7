@@ -17,18 +17,6 @@ public class ScooterServiceClient {
         this.baseURI = baseURI;
     }
 
-    @Step("Клиент – получение списка заказов без параметров")
-    public ValidatableResponse getOrders() {
-        return given()
-                .filter(new AllureRestAssured())
-                .log().all()
-                .baseUri(baseURI)
-                .header("Content-Type", "application/json")
-                .get("/api/v1/orders")
-                .then()
-                .log().all();
-    }
-
     @Step("Клиент – получение списка заказов с параметрами")
     public ValidatableResponse getOrders(Integer courierId, String nearestStation, Integer limit, Integer page) {
         return given()
